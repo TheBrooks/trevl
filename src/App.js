@@ -1,16 +1,19 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Navbar from "./Navbar";
+import Landing from "./Landing";
+import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <p className="App-intro">
-          Lets make this Trevl application!
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <BrowserRouter>
+    <div className="App">
+      <Navbar />
+      <p className="App-intro">Lets make this Trevl application!</p>
+      <Switch>
+        <Route exact path="/" component={Landing} />
+      </Switch>
+    </div>
+  </BrowserRouter>
+);
 
 export default App;
